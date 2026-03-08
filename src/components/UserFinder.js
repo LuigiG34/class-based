@@ -2,6 +2,7 @@ import Component, { Fragment, useState, useEffect } from 'react';
 
 import Users from './Users';
 import classes from './UserFinder.module.css';
+import UsersContext from "../store/users-context";
 
 const DUMMY_USERS = [
     { id: 'u1', name: 'Max' },
@@ -10,6 +11,8 @@ const DUMMY_USERS = [
 ];
 
 class UserFinder extends Component {
+    static contextType = UsersContext;
+
     constructor() {
         super();
         this.state = {
